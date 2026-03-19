@@ -88,9 +88,9 @@ jiwer
 
 | Metric   | Value |
 | -------- | ----- |
-| Accuracy | XX%   |
-| WER      | XX    |
-| CER      | XX    |
+| Accuracy | 76.23%|
+| WER      |0.237  |
+| CER      | 0.260   |
 
 *(Replace with your actual values)*
 
