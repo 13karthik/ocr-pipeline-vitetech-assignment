@@ -36,6 +36,18 @@ The dataset is not included in this repository due to GitHub size limitations.
 3. Place it inside the project directory:
 
 data/
+#  Limitations
+
+- The model treats OCR as a classification task instead of sequence prediction
+- Flattening images removes spatial relationships between pixels
+- Performance degrades on complex or noisy handwriting
+- Not suitable for full sentence recognition
+# Future Work
+
+- Use transformer-based OCR models like TrOCR
+- Apply CNN + RNN architectures for sequence learning
+- Improve preprocessing with denoising and augmentation
+- Integrate real LLM APIs for better text correction
 
 #  Data Audit
 
