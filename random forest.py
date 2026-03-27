@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 
-# 📂 DATASET PATH
+#  DATASET PATH
 
 DATA_PATH = r"C:\Users\karth\Desktop\data"
 
