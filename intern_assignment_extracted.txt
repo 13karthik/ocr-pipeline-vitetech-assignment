@@ -1,0 +1,176 @@
+PAGES: 6
+
+===== PAGE 1 =====
+Intern Assignment - Detailed Candidate 
+Guide 
+ 
+Context 
+At Vite Tech, we work on real-world document and text processing problems where OCR is 
+just one part of the system. Raw OCR output is often noisy, incomplete, or inconsistent. The 
+goal of this exercise is not just to train a model, but to show how you think about the entire 
+pipeline: 
+data → model → evaluation → improvement → practical usage 
+ 
+Objective 
+Build a small, end-to-end OCR system using a public dataset. 
+Your solution should demonstrate: 
+• ability to work with real (imperfect) data 
+• ability to fine-tune a model (not just run a notebook) 
+• ability to evaluate outputs properly 
+• ability to improve results based on errors 
+• ability to think beyond OCR (e.g., using LLMs for correction/structuring) 
+ 
+Expected Outcome 
+By the end, you should have: 
+• a working OCR model (fine-tuned or adapted) 
+• measurable performance (CER / WER) 
+• clear understanding of where the model fails 
+• at least one improvement over baseline 
+• a simple idea of how this would work in a real product 
+ 
+Dataset Guidance (choose ONE) 
+Do not spend too much time searching for data. Use one of these: 
+
+===== PAGE 2 =====
+Option 1 (Recommended) 
+• IAM Handwriting Dataset (classic OCR dataset) 
+Option 2 
+• Kaggle: Handwritten text / word recognition datasets 
+(search: “handwriting recognition dataset”) 
+Option 3 (slightly harder) 
+• Receipts / scanned documents (e.g., SROIE) 
+ 
+Step-by-Step Tasks 
+1. Data Understanding (VERY IMPORTANT) 
+Before training anything: 
+• How many samples? 
+• What type of text? (words, sentences, structured?) 
+• Any bad samples? (empty, unreadable, wrong labels?) 
+• Are there duplicates? 
+• Is text consistent? (case, punctuation, spacing?) 
+     Deliverable: 
+Write a short “Data Audit” section: 
+• what you found 
+• what you fixed 
+• what you ignored (and why) 
+ 
+2. Data Preparation 
+You should: 
+• split into train / validation / test 
+• ensure no data leakage 
+• normalize text (define your rules clearly) 
+Examples: 
+• lowercase vs preserve case 
+• remove punctuation or not 
+• trim whitespace 
+
+===== PAGE 3 =====
+• handle special characters 
+     Important: 
+Explain your choices. There is no single correct answer. 
+ 
+3. Baseline Model (Start Simple) 
+Use a pretrained model: 
+• Recommended: microsoft/trocr-small-handwritten 
+Run inference without heavy tuning. 
+     Deliver: 
+• baseline CER / WER 
+• a few example predictions 
+ 
+4. Fine-Tuning 
+Train the model on your dataset. 
+You should: 
+• define training setup (epochs, batch size, learning rate) 
+• keep it simple (this is not a research project) 
+• document what you changed 
+ 
+5. Evaluation (Critical Part) 
+Use: 
+• CER (Character Error Rate) 
+• WER (Word Error Rate) 
+Also include: 
+• 5–10 prediction examples 
+• what went wrong in those examples 
+     Example error types: 
+• missing characters 
+
+===== PAGE 4 =====
+• merged words 
+• punctuation issues 
+• completely wrong predictions 
+ 
+6. Improvement Step (MANDATORY) 
+You must show at least one improvement over baseline. 
+Examples: 
+• better text normalization 
+• filtering bad data 
+• changing model checkpoint (small → base) 
+• minor hyperparameter tuning 
+     Show: 
+• before vs after comparison 
+• what changed and why 
+ 
+7. LLM Post-Processing (Evalyn-Specific Requirement) 
+Raw OCR is often messy. Show how you would improve it using an LLM. 
+Examples: 
+• correct OCR mistakes 
+• normalize text 
+• extract structured output 
+     You can: 
+• use OpenAI / any LLM API 
+• or simulate with prompts 
+     Deliver: 
+• input OCR output 
+• improved output 
+• short explanation of approach 
+ 
+8. Local → Cloud Thinking 
+
+===== PAGE 5 =====
+You do NOT need to deploy fully. 
+But explain: 
+• how you ran locally (CPU / GPU / Colab) 
+• how you would run training on cloud 
+• where model artifacts would be stored 
+• how inference would be exposed (API / batch) 
+ 
+Constraints 
+• Keep it simple and practical 
+• Assume limited compute (Colab or single GPU) 
+• Focus on clarity over complexity 
+ 
+Deliverables 
+Submit: 
+1. Git repository 
+2. README with: 
+o setup instructions 
+o Architecture design 
+o how to run training 
+o how to evaluate 
+o final summary 
+3. Code (scripts or notebook) 
+4. Metrics (CER, WER) 
+5. Sample predictions 
+6. Short report (can be Markdown) 
+ 
+What We Are Looking For 
+We are NOT looking for: 
+• highest accuracy 
+• complex architectures 
+• perfect results 
+We ARE looking for: 
+• clear thinking 
+
+===== PAGE 6 =====
+• good data handling 
+• correct evaluation 
+• ability to explain decisions 
+• ability to improve results 
+ 
+Bonus (Optional but Valuable) 
+• experiment comparison (baseline vs improved) 
+• simple visualization of errors 
+• cost/performance reasoning 
+• when NOT to use OCR (important thinking signal) 
+ 
+

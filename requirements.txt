@@ -1,0 +1,8 @@
+accelerate>=0.28.0
+jiwer>=3.0.4
+numpy>=1.26.0
+Pillow>=10.0.0
+sentencepiece>=0.1.99
+torch>=2.2.0
+transformers>=4.39.0
+tqdm>=4.66.0
